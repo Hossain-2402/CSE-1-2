@@ -8,7 +8,7 @@ marks dist:
         - iGraphics
         - struct, memory, dynaic memory alloc
         - struct, memory, dynaic memory alloc
-        
+
     Project - 40:
         - Periodical Update [10]
         - Periodical Update [10]
@@ -20,3 +20,80 @@ marks dist:
         - struct, pointer, dynamic memory alloc
     
     Attendance - 20
+
+# Visual studio code 2010/2013 recommanded
+
+#   iInitialize(width, height, "Project Title");
+
+#   iFilledRectangle(margin-left, margin-bottom, width, height);
+#   iRectangle(margin-left, margin-bottom, width, height); [Does not fill the ractangle with any color]
+
+#	iFilledCircle(margin-left,margin-bottom,radius);
+#   iSetColor(RED, GREEN, BLUE);
+
+#   glLineWidth(5); [controls the border of the box]
+#   iEllipse(300,300,width,heigt);
+
+#   iFilledPolygon(x,y,3); [x,y are variable] [ 3 represents the number of variables to use from each array ]
+#   iPolygon(x,y,3); [x,y are variable] [ 3 represents the number of variables to use from each array ] 
+
+#   iText(100,200,"CSE 1200",GLUT_BITMAP_HELVETICA_18); [Last parameter is the font size]
+
+# The iSetColor() controls the color of its' imidiate after iInitialize()
+
+    iSetColor()
+    iFilledRectangle()
+
+  -----------
+| Class Work |
+  -----------
+void iDraw()
+{
+
+//	---------------------------------------------------------------------------------------------
+//	iSetColor(255, 255, 255);
+//	iFilledRectangle(250, 200, 50, 100);
+
+	
+//	iSetColor(77, 77, 77);
+//	glLineWidth(5);
+//	iRectangle(50, 50, 50, 50);
+//	---------------------------------------------------------------------------------------------
+	
+//	iSetColor(255, 255, 255);
+//	iFilledCircle(250,250,20);
+
+//	iSetColor(255, 255, 255);
+//	iFilledCircle(25,25,20);
+//	---------------------------------------------------------------------------------------------
+
+//	iEllipse(300,300,100,50);	
+//	---------------------------------------------------------------------------------------------
+
+//	iSetColor(128,0,128);
+//	double x[] = {200,250,300,270,200};
+//	double y[] = {200,250,200,150,150};
+	
+//	double x[] = {200,250,300};
+//	double y[] = {200,250,200};
+//	iFilledPolygon(x,y,3);
+//	---------------------------------------------------------------------------------------------
+
+//	iSetColor(255,255,255);
+//	iText(100,200,"CSE 1200",GLUT_BITMAP_HELVETICA_18);
+//	---------------------------------------------------------------------------------------------
+
+//	iSetColor(255,255,255);
+
+//	char str[20];
+
+//	int score = 1500;
+//	sprintf_s(str,"Scores: %d", score);
+//	iText(100,200,str,GLUT_BITMAP_HELVETICA_18);
+//	---------------------------------------------------------------------------------------------
+
+//	iSetColor(255,255,255);
+//	iPoint(200,200,10);
+
+
+}
