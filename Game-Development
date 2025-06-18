@@ -28,7 +28,7 @@ marks dist:
 #   iFilledRectangle(margin-left, margin-bottom, width, height);
 #   iRectangle(margin-left, margin-bottom, width, height); [Does not fill the ractangle with any color]
 
-#   iFilledCircle(margin-left,margin-bottom,radius);
+#   iFilledCircle(margin-left,margin-bottom,radius); [margin-bottom indicates how high the center of the circle will be ]
 #   iSetColor(RED, GREEN, BLUE);
 
 #   glLineWidth(5); [controls the border of the box]
@@ -38,8 +38,9 @@ marks dist:
 #   iPolygon(x,y,3); [x,y are variable] [ 3 represents the number of variables to use from each array ] 
 
 #   iText(100,200,"CSE 1200",GLUT_BITMAP_HELVETICA_18); [Last parameter is the font size]
+#   iPoint(200,200,10); [margin-bottom indicates how high the center of the circle will be ]
 
-#   iLine(10,20,100,200);
+#   iLine(10,20,100,200); 
 
 # The iSetColor() controls the color of its' imidiate after iInitialize()
 
