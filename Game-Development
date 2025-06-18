@@ -28,7 +28,7 @@ marks dist:
 #   iFilledRectangle(margin-left, margin-bottom, width, height);
 #   iRectangle(margin-left, margin-bottom, width, height); [Does not fill the ractangle with any color]
 
-#	iFilledCircle(margin-left,margin-bottom,radius);
+#   iFilledCircle(margin-left,margin-bottom,radius);
 #   iSetColor(RED, GREEN, BLUE);
 
 #   glLineWidth(5); [controls the border of the box]
