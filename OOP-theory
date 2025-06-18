@@ -1,0 +1,24 @@
+                                                                            Lec-1
+                                                                            -----
+
+
+Books:
+ 	Java : The complete Reference, 11th edition [Theoritical ]
+		-Herbert schildt
+	Head First Java, 2nd Edition
+		-Kathy Sierra
+
+Classroom code : cpzm2j7p
+
+
+
+# source code ---> compiler -----> machine code 
+
+# Hello.c 	 ---> compiler ---> Hello.exe
+
+# Hello.java ---> copiler  ---> Hello.class(byte code) ---> JVM [Java virtual machine] ---> output 
+
+
+# compile once, run everywhere
+
+
