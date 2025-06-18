@@ -38,6 +38,8 @@ marks dist:
 #   iPolygon(x,y,3); [x,y are variable] [ 3 represents the number of variables to use from each array ] 
 
 #   iText(100,200,"CSE 1200",GLUT_BITMAP_HELVETICA_18); [Last parameter is the font size]
+	-sprintf_s(str,"Scores: %d", score); [it makes str = "Scores: 50", if the score = 50]
+
 #   iPoint(200,200,10); [margin-bottom indicates how high the center of the circle will be ]
 
 #   iLine(10,20,100,200); 
