@@ -14,10 +14,9 @@ Classroom code : cpzm2j7p
 
 # source code ---> compiler -----> machine code 
 
-# Hello.c 	 ---> compiler ---> Hello.exe
+# C++: Hello.c 	 ---> compiler ---> Hello.exe
 
-# Hello.java ---> copiler  ---> Hello.class(byte code) ---> JVM [Java virtual machine] ---> output 
-
+# java: Hello.java ---> compiler  ---> Hello.class(byte code) ---> JVM [Java virtual machine] ---> output 
 
 # compile once, run everywhere
 
