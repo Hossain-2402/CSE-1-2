@@ -39,6 +39,10 @@ marks dist:
 
 #   iText(100,200,"CSE 1200",GLUT_BITMAP_HELVETICA_18); [Last parameter is the font size]
 
+# Line:  iPoint(200,200,10);
+	 iPoint(200,200,10);
+	 iLine(10,20,100,200);
+
 # The iSetColor() controls the color of its' imidiate after iInitialize()
 
     iSetColor()
