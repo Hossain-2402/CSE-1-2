@@ -21,3 +21,37 @@ Classroom code : cpzm2j7p
 # compile once, run everywhere
 
 
+
+
+                                                                            Lec-2
+                                                                            -----
+# JVM's drawback : "speed" kom hoy. Because it goes through some extra steps
+
+# Encapsulation :
+	Binds data and code.
+	It enables the security of the data and code. 
+
+# Inheritance :
+	Inherits attributes from one class to another.
+	Less code. 
+
+# Polymorphism :
+	One interface multiple methods.
+	A single interface can control multiple operations.
+	If a method substitutes multiple method's funciton. 
+
+* fabs() = makes absolute value for "float" datatype
+* labs() = makes absolute value for "long" datatype
+
+
+# Class and Object :
+  ````````````````
+
+	one class -> multiple object 
+
+
+	Student s1 = new Student("Hossain", 17, 1.1); // here 's1' is an object 
+
+
+
+
