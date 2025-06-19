@@ -105,4 +105,17 @@ void iDraw()
 //	iSetColor(255,255,255);
 //	iLine(10,20,100,200);
 
+  -----
+| Extra |
+  -----
+
+This is to add an image in the window (height,width can be controlled)
+	int vh = 600;
+	int vw = 400;
+
+	unsigned int texture = iLoadImage("pixels.jpg");
+
+	iShowImage(0, 0, 0.2*vw, 0.2*vh, texture);
+
+
 }
