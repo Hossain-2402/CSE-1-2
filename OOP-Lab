@@ -3,3 +3,88 @@ Net-beans = 585 MB
 Total = around 3 GB
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+jdk file = 206 MB
+Net-beans = 585 MB
+Total = around 3 GB
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                                                                                                         Lab-1
+                                                                                                                        ------
+
+ ----------
+|Class Note|
+ ----------
+
+JDK packages JVM,JRE
+
+# copy path address -> write "pushd <paste address>" 
+
+# to compile :
+    javac Hello.java
+# to run :
+    java Hello
+   // here "Hello" is the name the class
+
+# public = access modifier 
+# "public Welcome{}" hole file "Welcome.java" likhe save korte hobe 
+# c header file = java package
+
+# "import java.util.Scanner" package for getting input
+
+# getting input :
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		System.out.println(a);
+
+
+ ----------
+|Class Work|
+ ----------
+
+
+import java.util.Scanner;
+
+public class Hello{
+
+
+	public static void main(String[] args){
+		
+//		System.out.println("Welcome To JAVA");
+//-----------------------------------------------------------------
+		
+//		int a = 50;
+//		System.out.println("The current number is : "+ a);
+//-----------------------------------------------------------------
+		
+//		String name = "Hossain";
+//		System.out.println("My name is : " + name);
+//-----------------------------------------------------------------
+
+//		int a = 10;
+//		if(a%2 == 0){
+//			System.out.println(a);
+//		}
+//		else{
+//			System.out.println("Dumb");
+//		}
+//-----------------------------------------------------------------
+		
+//		for(int i=1;i<=10;i++){
+//			System.out.println("This is the line number : "+i);
+//		}
+//-----------------------------------------------------------------
+
+//		Scanner sc = new Scanner(System.in);
+//		int a = sc.nextInt();
+//		System.out.println(a);
+//		
+//		double b = sc.nextDouble();
+//		System.out.println(b);
+		
+//		float c = sc.nextFloat();
+//		System.out.println(c);
+
+
+	}
+}
