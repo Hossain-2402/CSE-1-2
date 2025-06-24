@@ -22,7 +22,6 @@ Classroom code : cpzm2j7p
 
 
 
-
                                                                             Lec-2
                                                                             -----
 # JVM's drawback : "speed" kom hoy. Because it goes through some extra steps
@@ -54,4 +53,75 @@ Classroom code : cpzm2j7p
 
 
 
+                                                                            Lec-3
+                                                                            -----
 
+# The class and and object has to indicate the same "physical thing"
+
+
+
+
+# Class:
+	- A class is a template for an object
+	- Define a new data type
+
+
+
+# Syntax : 
+	
+	class classname{
+		type-instance variable1;
+		.
+		.
+		.
+		type-instance variableN;
+
+
+		type methodname1(parameter-list){
+
+		}
+		.
+		.
+		.
+		.
+		type methodnameN(parameter-list){
+			
+		}
+
+	}
+
+	# Example :
+		
+		Class:
+		------
+		class Vechicle{
+			int engine;
+			int top_speed;
+
+			int move(engine){
+				....
+			}
+		}
+
+		Object:
+		-------
+		Vechicle car = new Vehicle();
+
+
+
+
+# Everything(code/manipulation) in java has to be inside a METHOD
+
+
+class Demo{
+		public static void main(String args[]){
+				Box matchBox = new Box();
+				matchBox.width = 2;
+				matchBox.depth = 1;
+				matchBox.height = 1.5;
+		}
+}
+
+
+
+H.W : make an object of Box class 
