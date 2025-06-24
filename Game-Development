@@ -119,3 +119,98 @@ This is to add an image in the window (height,width can be controlled)
 
 
 }
+
+
+                                                                                                    Lec-2
+                                                                                                    -----
+                                                                                                    
+  -----------
+| Class Note |
+  -----------
+
+# Rotation: 
+    	iSetColor(255, 255, 255);
+    	iRotate(200,50,45);
+    	iFilledRectangle(200, 50, 100, 100);
+    	iUnRotate();
+
+
+  
+  -----------
+| Class Work |
+  -----------
+
+  
+//	iSetColor(255, 255, 255);
+//	iFilledRectangle(x, 10, 100, 100);
+
+//	x+=0.01;
+//	if(x >= 600) x = -10;
+//	---------------------------------------------------------------------------------------------
+
+//void iPassiveMouseMove(int mx, int my)
+//{
+//	printf("mx = %d my = %d\n", mx,my);
+//}
+//	---------------------------------------------------------------------------------------------
+
+//void iMouseMove(int mx, int my)
+//{
+//	printf("This is for drag and drop");
+//}
+//	---------------------------------------------------------------------------------------------
+
+//void iMouse(int button, int state, int mx, int my)
+//{
+	
+//	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+//	{
+//		printf("mx = %d my = %d\n", mx,my);
+		
+//	}
+	
+	
+//	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+//	{
+//		
+//	}
+}
+//	---------------------------------------------------------------------------------------------
+
+//	iSetColor(255, 255, 255);
+//	iRotate(0,0,45);
+//	iFilledRectangle(200, 50, 100, 100);
+//	iUnRotate();
+//	---------------------------------------------------------------------------------------------
+
+
+//	iSetColor(255, 255, 255);
+//	iRotate(200,50,45);
+//	iFilledRectangle(200, 50, 100, 100);
+//	iUnRotate();
+//	---------------------------------------------------------------------------------------------
+
+
+//int rgb[3];
+
+//void iMouse(int button, int state, int mx, int my)
+//{
+	
+//	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+//	{
+//		iGetPixelColor(mx,my,rgb);
+//		printf("R: %d, G: %d, B: %d\n",rgb[0],rgb[1],rgb[2]);
+		
+//	}
+	
+	
+//	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+//	{
+		
+//	}
+//}
+//	---------------------------------------------------------------------------------------------
+
+
+
+// iDelayMS(10);
