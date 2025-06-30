@@ -96,3 +96,86 @@ public class Hello{
 
 	}
 }
+
+
+
+                                                                                                                         Lab-2
+                                                                                                                        ------
+
+ ----------
+|Class Note|
+ ----------
+
+
+# Java with ant > Java application
+# To create new class : 
+        click on the folder inside "Source packages" right click > New > Java class 
+
+# Conventions : (Camel casing)
+    class name      = public class ClassRep
+    variable name   = studentId
+    method name     = calculateGrade
+
+# To create object:    
+    Student s1 = new Student();
+
+# "Student s" is a reference, not an object
+
+# "new" keyword makes a memory 
+
+# "Student()" is a constructor: initializes int to 0 and String to NULL
+
+# 'one' class can have 'multiple' constructors
+
+# Constructor : 
+    - has no return type
+    - constructor name = class name 
+
+
+
+
+ ----------
+|Class Work|
+ ----------
+
+    main:
+    ----
+
+
+        //        Student s;
+        //        Student s1 = new Student();
+        //        s1.name = "Hossain";
+        //        s1.id = 17;
+        //        
+        //        s1.printName();
+        //-----------------------------------------------------------------
+
+        //        Student s;
+        //        Student s1 = new Student("Hossain",17);
+        //        
+        //        s1.printName();
+        //-----------------------------------------------------------------
+
+
+
+        //        Student s = new Student();
+        //        s.name = "Hossain";
+        //        s.id = 17;
+        //        
+
+    class:
+    -----
+        String name;
+        int id;
+        
+        Student(String newName, int newId){
+            name = newName;
+            id = newId;
+        }
+        
+        Student(){
+        }
+        
+        void printName(){
+            System.out.println(name);
+        }
