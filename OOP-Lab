@@ -179,3 +179,189 @@ public class Hello{
         void printName(){
             System.out.println(name);
         }
+
+
+
+        
+                                                                                                                         Lab-3
+                                                                                                                        ------
+
+   ----------
+ | Class note |
+   ----------
+
+
+   # private makes a variable/method unaccessable from the main class 
+   # making the Constructor private, does not allow to create an object 
+   # keep class,constructor "public"
+
+
+
+   # The problems can be solved using the getter and setter methods
+
+
+  ---------
+| Main.java |
+  ---------
+
+    package gradedemo;
+    import java.util.Scanner;
+
+    /**
+     *
+     * @author AUST
+     */
+    public class GradeDemo {
+
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            
+    //        Student s1 = new Student("Hossain",17);
+    //        System.out.println(s1.name);
+    //  ---------------------------------------
+
+        
+        
+
+
+
+            
+            
+            
+        }
+        
+    }
+
+
+  ------------
+| Student.java |
+  ------------
+  
+
+
+
+    package gradedemo;
+
+    /**
+     *
+     * @author AUST
+     */
+    public class Student {
+        String name;
+        int id;
+        
+        Student(){
+        
+        }
+        
+    //    Student(String name, int id){
+    //        this.name = name;
+    //        this.id = id;
+    //    }   
+    //    -------------------------------------------------------
+        
+        
+        
+        
+    }
+
+
+
+
+  ---------------
+|  ShapeDemo.java |
+  ---------------
+  
+
+
+    package shapedemp;
+    import java.util.Scanner;
+    /**
+     *
+     * @author AUST
+     */
+    public class ShapeDemp {
+
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+    //        Circle c = new Circle(12,"red");
+    //        System.out.println(c.calculateArea());
+    //        System.out.println(c.getRadius());
+    //        
+    //        c.setRadius(50);
+    //        System.out.println(c.calculateArea());
+    //        System.out.println(c.getRadius());
+    //    -----------------------------------------------------------------------------
+
+
+
+
+            Circle c = new Circle(12,"red");
+            Circle c1 = new Circle(10,"black");
+            
+            
+            c.setRadius(50);
+            System.out.println(c1.calculateArea(c));
+            
+        }
+        
+    }
+
+
+
+  -----------
+| Circle.java |
+  -----------
+    
+    package shapedemp;
+
+    /**
+     *
+     * @author AUST
+     */
+    public class Circle {
+        private double radius;
+        private String color;
+        
+        Circle(){}
+        
+        Circle(double radius, String color){
+            this.radius = radius;
+            this.color = color;
+        }
+        
+        
+        public double getRadius(){
+            return this.radius; 
+        }
+        
+        public String getColor(){
+            return this.color; 
+        }
+        
+        
+        public void setRadius(int radius){
+            if(radius >= 0) this.radius = radius; 
+            else this.radius = 1;
+        }
+        
+        public void setColor(String color){
+            this.color = color; 
+        }
+        
+    //    
+    //    public double calculateArea(Circle c1){
+    //        
+    //        return Math.PI*(c1.radius)*(c1.radius);
+    //    }
+        
+        public double calculateArea(Circle c1){
+            
+            return Math.PI*(c1.radius)*(c1.radius);
+        }
+    }
