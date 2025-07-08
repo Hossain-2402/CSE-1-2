@@ -256,6 +256,9 @@ This is to add an image in the window (height,width can be controlled)
 
 
 	# "namespace" handles the conflict resolution
+	# "::" = scope resolution operator
+
+	# We can create a method inside a  Structure in cpp
 
 
 
@@ -264,7 +267,90 @@ This is to add an image in the window (height,width can be controlled)
   -----------
 | Class Work |
   -----------
-
+	
+	#include<iostream>
+	
+	using namespace std;
+	
+	//namespace reno{
+	//    double price;
+	//}
+	//
+	//using namespace saha{
+	//    double price;
+	//}
+	
+	struct Student{
+	    string name;
+	    float cgpa;
+	    int id;
+	
+	    void print(){
+	        cout << name << endl << cgpa << endl << id;
+	    }
+	};
+	
+	//void printDetails(Student s){
+	//    cout << s.name << endl << s.cgpa << endl << s.id;
+	//}
+	
+	//Student make_student(string name, int id, int cgpa){
+	//
+	//    Student new_student = {name,cgpa,id};
+	//
+	//    return new_student;
+	//}
+	
+	
+	//void increase_cg(Student x[], int s ){
+	//    for(int i=0;i<s;i++){
+	//        x[i].cgpa += 0.25;
+	//    }
+	//}
+	
+	int main(){
+	
+	//
+	//    double price;
+	//    reno::price = 3.5;
+	//    price = 6.7;
+	//    cout << reno::price << " " << price;
+	//-------------------------------------------------------------------------------------
+	
+	//
+	//    price = 3.5;
+	//
+	//    cout << price; // this is the price variable of the "reno" scope [since we wrote "using"]
+	//-------------------------------------------------------------------------------------
+	
+	//
+	//    Student s1 = {"Hossain",2,2};
+	//    cout << s1.name;
+	//-------------------------------------------------------------------------------------
+	
+	//    Student s1 = {"Hossain",2,2};
+	//    printDetails(s1);
+	//-------------------------------------------------------------------------------------
+	
+	
+	//    Student new_student = make_student("Hossain",3.5,17);
+	//    cout << new_student.name << endl << new_student.cgpa << endl << new_student.id;
+	//-------------------------------------------------------------------------------------
+	
+	
+	//    Student s1[2] = {
+	//        {"Hossain",3.5,17},
+	//        {"Zayed",3.5,25}
+	//    };
+	//
+	//    increase_cg(s1,2);
+	//
+	//    cout << s1[0].cgpa;
+	
+	
+	
+	
+	}
 
 
 
