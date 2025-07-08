@@ -346,10 +346,19 @@ This is to add an image in the window (height,width can be controlled)
 	//    increase_cg(s1,2);
 	//
 	//    cout << s1[0].cgpa;
+	//-------------------------------------------------------------------------------------
 	
 	
-	
-	
+	//    Student s1 = {"Hossain",2,2};
+	//    Student *ptr ;
+	//
+	//    ptr = &s1;
+	//
+	//    cout << ptr->name;
+		
+		
+		
+		
 	}
 
 
