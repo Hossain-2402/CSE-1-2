@@ -84,7 +84,7 @@ Classroom code : cpzm2j7p
 		.
 		.
 		.
-		type methodnameN(parameter-list){
+		type methodname(parameter-list){
 			
 		}
 
@@ -125,3 +125,784 @@ class Demo{
 
 
 H.W : make an object of Box class 
+
+
+
+                                                                            Lec-4
+                                                                            -----
+
+# Assignment process & retreval process
+
+
+# Method:
+
+	 class Box{
+			double height;
+			double width;
+			double depth;
+
+			double calculateVolume(){
+					double volume = height * width * depth;
+					return volume;
+			}
+	}
+
+	class BoxDemo(){
+		public static void main(String args[]){
+				Box box = new Box();
+				box.height = 10;
+				box.width = 10;
+				box.depth = 10;
+
+				System.out.println( "Volume is : " + box.calculateVolume() );
+		}
+	}
+
+# Making Assignment operation easier : 
+
+	 class Box{
+			double height;
+			double width;
+			double depth;
+
+			double calculateVolume(){
+					double volume = height * width * depth;
+					return volume;
+			}
+
+			void setVariables(double h,double w,double,d){
+					height = h;
+					width = w;
+					depth = d;
+			}
+	}
+
+	class BoxDemo{
+		public static void main(String args[]){
+				Box myBox = new Box();
+
+				myBox.setVariables(10,20,50);
+
+		}
+	}
+
+
+
+
+
+                                                                            Lec-5
+                                                                            -----
+
+
+
+Public keyword: ( Data not secured )
+--------------
+		class Demo{
+
+				class Box{
+						
+						double height,width,depth;
+
+						void setVariables(double h, double w, double d){
+
+								if(w<0) width = 0;
+								else width = w;
+
+								if(h<0) height = 0;
+								else height = h;
+
+								if(d<0) depth = 0;
+								else depth = d;
+						
+						}
+
+				}
+
+			
+				public static void main(String args[]){
+								Box matchBox = new Box();
+								matchBox = setVariables(5,-5,3);
+
+								System.out.println(matchBox.height);
+								System.out.println(matchBox.width);
+								System.out.println(matchBox.depth);
+				}
+
+		}
+
+
+
+
+Private keyword: ( Data secured )
+---------------
+		class Demo{
+
+				class Box{
+						
+						private double height,width,depth; // The "private" keyword is introduced
+		 
+						void setVariables(double h, double w, double d){
+
+								if(w<0) width = 0;
+								else width = w;
+
+								if(h<0) height = 0;
+								else height = h;
+
+								if(d<0) depth = 0;
+								else depth = d;
+						
+						}
+
+				}
+
+			
+				public static void main(String args[]){
+								Box matchBox = new Box();
+								matchBox = setVariables(5,-5,3);
+
+								System.out.println(matchBox.height); // This line won't work 
+								System.out.println(matchBox.width); // This line won't work 
+								System.out.println(matchBox.depth); // This line won't work 
+				}
+
+		}
+
+
+
+Making the code more accessable: 
+-------------------------------
+		class Demo{
+
+				class Box{
+						
+						private double height,width,depth; // The "private" keyword is introduced
+		 
+						void setWidth(double w){						|
+								if(w<0) width = 0;						  |		
+								else width = w;								  |		
+						}																		|
+						void setHeight(double h){						|
+								if(h<0) weight = 0;						  |				Setter methods
+								else weight = w;								|
+						}																		|
+						void setDepth(double d){						|
+								if(d<0) wepth = 0;							|
+								else wepth = w;									|
+						}																		|
+
+
+
+
+
+						public double getWidth(){        		|		
+									return width;									|
+						}																		|
+						public double getHeight(){				  |
+									return height;								|  		Getter methods
+						}																		|
+						public double getDepth(){						|
+									return depth;									|
+						}																		|
+				}
+
+			
+				public static void main(String args[]){
+								Box matchBox = new Box();
+								matchBox = setWidth(5);
+								matchBox = setHeight(5);
+								matchBox = setDepth(5);
+
+								matchBox.getHeight(10);
+								matchBox.getWidth(10);
+								matchBox.getDepth(10);
+
+								System.out.println(matchBox.getHeight());
+								System.out.println(matchBox.getWidth());
+								System.out.println(matchBox.getDepth());
+				}
+
+		}
+
+
+
+Constructor:
+-----------
+
+		class Demo{
+
+				class Box{
+						
+						private double height,width,depth;
+		 				
+		 				public Box(double d,double w,double h){
+								height = h;
+								width = w;
+								depth = d;		 					
+		 				}
+		 
+						void setWidth(double w){						|
+								if(w<0) width = 0;						  |		
+								else width = w;								  |		
+						}																		|
+						void setHeight(double h){						|
+								if(h<0) weight = 0;						  |				Setter methods
+								else weight = w;								|
+						}																		|
+						void setDepth(double d){						|
+								if(d<0) wepth = 0;							|
+								else wepth = w;									|
+						}																		|
+
+
+
+
+
+						public double getWidth(){        		|		
+									return width;									|
+						}																		|
+						public double getHeight(){				  |
+									return height;								|  		Getter methods
+						}																		|
+						public double getDepth(){						|
+									return depth;									|
+						}																		|		 				
+
+				}
+
+			
+				public static void main(String args[]){
+								Box matchBox = new Box(5,10,5);
+								matchBox.setWidth(50);
+								
+				}
+
+		}
+
+
+Parameter naming: (using "This" keyword)
+----------------
+
+		class Demo{
+
+				class Box{
+						
+						private double height,width,depth;
+		 				
+		 				public Box(double depth,double width,double height){
+								this.height = height;
+								this.width = width;
+								this.depth = depth;		 					
+		 				}
+		 
+				}
+
+			
+				public static void main(String args[]){
+								Box matchBox = new Box(5,10,5);
+								matchBox.setWidth(50);
+								
+				}
+
+		}
+			// This reffers to current object 
+
+
+                                                                            Lec-6
+                                                                            -----
+
+
+
+
+
+
+The "new" keyword:
+-----------------
+		Box b1 = new Box();
+		2 parts: 	
+		-------
+			Box b1;						//  Here "b1" = "reference variable" it is just created. 
+			b1 = new Box();		//	1. "new" makes an address/memory space 
+												//	2. and then it returns the address to the variable b1;
+
+
+
+
+Shifting objects:
+----------------
+    Box b1 = new Box(1,1,1); // b1 = 0x00233
+    Box b2 = new Box(1,2,3); // b2 = 0x00234
+
+    b1 = b2 ; // b1 = 0x00233
+
+    // the addresss of "b2" gets de-allocated
+
+    // if "b2" is being changed , b1 will be changed too 
+
+
+Instance variables:
+------------------
+
+
+	 class Box{
+			double height;  |
+			double width;   | Instance variable [every object has these variables in common]
+			double depth;   |
+
+		}
+
+
+
+Array:
+------
+	
+	1D:	
+	
+		int arr[] = new Int[10];
+		int[] arr = new Int[10];
+
+	2D:
+		
+		int towD[][] = new Int[4][5];
+
+		int towD[][] = new Int[4];
+		
+
+		towD[0] = new Int[1];
+		towD[1] = new Int[2];
+		towD[2] = new Int[3];
+		towD[3] = new Int[4];
+
+
+
+Array: Object
+-------------
+
+	class Demo{
+			class Student{
+					String name,id;
+					Student(String name, String id){
+							this.name = name;
+							this.id = id;
+					}
+
+			}
+			public static void main(String args[]){
+
+					Scanner sc = new Scanner(System.in);
+
+					Student fall24CSE12[] = new Student[100];		// it is an "array" not object
+					int arr[] = new int[100];
+
+					for(int i=0;i<fall24CSE12.length;i++){
+							String name = sc.nextLine();
+							String id = sc.nextLine();
+
+							fall24CSE12[i] = new Student(name,id); // these are "objects"		
+					}
+			}
+	}
+
+
+                                                                            Lec-7
+                                                                            -----
+
+
+
+Method overloading:
+------------------
+
+	class Demo{
+			class Student{
+					String name,id;
+					Student(String name, String id){
+							this.name = name;
+							this.id = id;
+					}
+
+					void m(){
+
+					}
+
+					void m(int x){
+					
+					}
+
+					void m(String s){
+					
+					}
+
+			}
+			public static void main(String args[]){
+					Student a = new Student();
+
+					a.m();
+					a.m(5);
+					a.m("Hossain");
+			}
+	}
+
+
+
+
+Method overloading: (Constructor)
+------------------
+
+	class Demo{
+			class Student{
+					String name,id;
+					Student(String name, String id){
+							this.name = name;
+							this.id = id;
+					}
+
+					Student(){
+
+					}
+
+					Student(String name){
+					
+					}
+
+					Student(String id){
+					
+					}
+
+			}
+			public static void main(String args[]){
+					Student a = new Student();
+
+					Student b = new Student("Hossain");
+
+					Student c = new Student("017");
+
+					Student d = new Student("Hossain","017");
+
+			}
+	}
+
+
+
+	class Demo{
+			class Table{
+					double tl;
+					double tw;
+					double th;
+
+					Table(double tl, double tw,double th){
+							this.tl = tl;
+							this.tw = tw;
+							this.th = th;
+					}
+
+					Table(){
+							tl = -1;
+							tw = -1;
+							th = -1;
+					}
+
+			}
+
+			class Cartpainter{
+			
+			}
+
+			public static void main(String args[]){
+
+
+			
+			}
+	}
+
+
+
+                                                                            Lec-8
+                                                                            -----
+
+
+Table & Carpainter: (Example)
+------------------
+
+		class Table{
+				double tl;
+				double tw;
+				double th;
+
+				Table(double tl, double tw,double th){
+						this.tl = tl;
+						this.tw = tw;
+						this.th = th;
+				}
+		}
+
+		class Cartpainter{
+				String name;
+
+				Carpainter(String name){
+						this.name = name;
+				}
+
+				Table makeATableFromDimension(double tw, double tl, double th){
+						Table t = new Table(tw,tl,th);
+						return t; // ----------------------------------------------returning object----------------------------------------------
+				}
+
+				Table makeATableFromTable(Table t){ // ------------------------t = Reference Variable------------------------
+
+						Table newT = new Table(t.tw, t.tl, t.th);
+
+						return newT; // ----------------------------------------------returning object----------------------------------------------
+
+				}
+
+// Same task is done using method overloading
+
+				Table makeATable(double tw, double tl, double th){
+						Table t = new Table(tw,tl,th);
+						return t; 
+				}
+
+				Table makeATable(Table t){
+
+						Table newT = new Table(t.tw, t.tl, t.th);
+
+						return newT; 
+				}
+
+
+		}
+
+	class Demo{
+
+
+			public static void main(String args[]){
+
+					Table myOldTable = new Table(1,2,3);
+
+					Carpainter rahim = new Carpainter("Rahim");
+
+					Table myNewTableFromDimension = rahim.makeATableFromDimension(myOldTable.tw, myOldTable.tl, myOldTable.th);
+
+					Table myNewTableFromTable = rahim.makeATableFromTable(myOldTable);
+
+// Same task is done using method overloading
+
+					Table myNewTableFromDimension = rahim.makeATable(myOldTable.tw, myOldTable.tl, myOldTable.th);
+
+					Table myNewTableFromTable = rahim.makeATable(myOldTable);
+
+
+						
+			}
+	}
+
+
+
+
+		class Cartpainter{
+				String name;
+
+				Carpainter(String name){
+						this.name = name;
+				}
+
+				Table makeATableFromDimension(double tw, double tl, double th){
+						Table t = new Table(tw,tl,th);
+						return t; // ----------------------------------------------returning object----------------------------------------------
+				}
+
+				Table makeATableFromTable(Table t){ // ------------------------t = Reference Variable------------------------
+
+						Table newT = new Table(t.tw, t.tl, t.th);
+
+						return newT; // ----------------------------------------------returning object----------------------------------------------
+
+				}
+
+
+
+
+Type Convertion:
+---------------
+
+		class Convertion{
+				void test(double data){
+				}
+
+				void test(){
+				}
+
+
+		}
+
+	class Demo{
+
+
+			public static void main(String args[]){
+							
+					int x = 10;
+
+					Convertion c = new Convertion();
+
+					c.test();
+
+					c.test(x); // this converts the "int" to "double" [This process does not have any precision error]
+
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔄 Core Enhancements
+
+		Ball Trail Effect: Show fading trails behind the moving ball.
+
+
+🧱 Environment Features
+	Trampoline Platforms: Add moving or static platforms the ball can bounce on.
+
+	Floating Zones: Areas where tha ball floats on water or on air
+
+	Slippery Zones: Ball accelerates or decelerates when in slippery regions.
+
+🎮 Player Interaction
+	Keyboard control: Like Pong/Arkanoid — player controls a paddle to keep the ball bouncing.
+
+	Mouse Drag Launch: Let the user drag and release to shoot the ball.
+
+	Tilt Control: Use arrow keys to tilt the stage and affect ball movement.
+
+	Collectables: Add coins or stars, life, sheild, teleport 
+
+🔫 Combat Mechanics
+	Shooting Ball: Ball can shoot bullets to destroy obstacles.
+
+	Enemy : Introduce enemies with AI movement patterns.
+
+🧠 Game Modes / Logic
+	Score System: Points based on bounces, collectables, enemies destroyed.
+
+	Level Progression: Each level has different layouts, gravity, or challenges.
+
+	Health Bar / Life System: Ball has limited hits or lives.
+
+✨ Visual and Audio Effects
+
+	Background Animation: Moving sky, stars, or scrolling ground.
+
+
+
+
+NOW MAKE A BLUE PRINT SIMILAR TO THE STRUCTURE OF THE FILE I ATTACHED 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
