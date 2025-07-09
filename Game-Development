@@ -294,7 +294,7 @@ This is to add an image in the window (height,width can be controlled)
 	//    cout << s.name << endl << s.cgpa << endl << s.id;
 	//}
 	
-	//Student make_student(string name, int id, int cgpa){
+	//Student make_student(string name, double cgpa, int id){
 	//
 	//    Student new_student = {name,cgpa,id};
 	//
@@ -320,7 +320,7 @@ This is to add an image in the window (height,width can be controlled)
 	//
 	//    price = 3.5;
 	//
-	//    cout << price; // this is the price variable of the "reno" scope [since we wrote "using"]
+	//    cout << price; // this is the price variable of the "saha" scope [since we wrote "using"]
 	//-------------------------------------------------------------------------------------
 	
 	//
@@ -336,8 +336,8 @@ This is to add an image in the window (height,width can be controlled)
 	//    Student new_student = make_student("Hossain",3.5,17);
 	//    cout << new_student.name << endl << new_student.cgpa << endl << new_student.id;
 	//-------------------------------------------------------------------------------------
-	
-	
+
+
 	//    Student s1[2] = {
 	//        {"Hossain",3.5,17},
 	//        {"Zayed",3.5,25}
