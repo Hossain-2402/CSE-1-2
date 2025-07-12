@@ -752,40 +752,89 @@ Type Convertion:
 	}
 
 
+                                                                            Lec-9
+                                                                            -----
 
 
+"Static" variable:
+-----------------
 
+	Static variable does not depend on the "object"
+		class Table{
+				double tw; //----------------------------------------instance variable----------------------------------------
+				static int s; //----------------------------------------Static variable---------------------------------------- 
 
 
 
+				static void m(){
+					...
+				}
 
 
+				void m(){
+					...
+				}
 
+		}
 
+		class Demo{
+				public static void main(String args[]){
+						Table t = new Table();
 
+						t.tw = 50; 		// ----------------------------------------Object.var----------------------------------------
+						Table.s = 50; // ----------------------------------------Class.var----------------------------------------
 
 
+						// Example : Math.pow(2,5);
+				}
+		}
 
 
 
+"STATIC" variable/method can't call "INSTANCE" variable/method:
+--------------------------------------------------------------
 
 
+		class Table{
+				double tw;
+				static int s; 
 
 
 
+				static void m(){
+					tw = 5; //----------------------------------------NOT ALLOWED----------------------------------------
+					m();		//----------------------------------------NOT ALLOWED----------------------------------------
+				}
 
 
+				void m(){
+					...
+				}
 
+		}
 
 
+		class Demo{
+				public static void main(String args[]){
 
+				}
+		}
 
 
 
 
+# JVM calls the public static void main() method 
 
+#Making constant variables:
+--------------------------
+	C: #define int x = 5
+	-
 
+	C++: const int x = 5
+	----
 
+	JAVA: final int x = 5
+	----
 
 
 
@@ -833,47 +882,13 @@ Type Convertion:
 
 
 
-🔄 Core Enhancements
 
-		Ball Trail Effect: Show fading trails behind the moving ball.
 
 
-🧱 Environment Features
-	Trampoline Platforms: Add moving or static platforms the ball can bounce on.
 
-	Floating Zones: Areas where tha ball floats on water or on air
 
-	Slippery Zones: Ball accelerates or decelerates when in slippery regions.
 
-🎮 Player Interaction
-	Keyboard control: Like Pong/Arkanoid — player controls a paddle to keep the ball bouncing.
 
-	Mouse Drag Launch: Let the user drag and release to shoot the ball.
-
-	Tilt Control: Use arrow keys to tilt the stage and affect ball movement.
-
-	Collectables: Add coins or stars, life, sheild, teleport 
-
-🔫 Combat Mechanics
-	Shooting Ball: Ball can shoot bullets to destroy obstacles.
-
-	Enemy : Introduce enemies with AI movement patterns.
-
-🧠 Game Modes / Logic
-	Score System: Points based on bounces, collectables, enemies destroyed.
-
-	Level Progression: Each level has different layouts, gravity, or challenges.
-
-	Health Bar / Life System: Ball has limited hits or lives.
-
-✨ Visual and Audio Effects
-
-	Background Animation: Moving sky, stars, or scrolling ground.
-
-
-
-
-NOW MAKE A BLUE PRINT SIMILAR TO THE STRUCTURE OF THE FILE I ATTACHED 
 
 
 
