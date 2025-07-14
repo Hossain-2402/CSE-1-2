@@ -365,3 +365,124 @@ public class Hello{
             return Math.PI*(c1.radius)*(c1.radius);
         }
     }
+
+                                                                                                                         Lab-4
+                                                                                                                        ------
+ ------------
+| class note |
+ ------------
+
+	double score  = author.getReaderCount() / 5.00 + author.getBookCount() * 200.00;
+
+	Reason of Type-casting:
+		double size != int size
+		double size > int size 
+
+ -----------
+| class code |
+ -----------
+
+Tulip:
+-----
+
+public class Tulip {
+    private String color;
+    private double height;
+    
+    Tulip(){
+    
+    }
+    
+    
+    Tulip(String c, double h){
+        
+        color = c;
+        height = h;
+    
+    }
+    
+    String getColor(){
+        return color;
+    }
+    
+    double getHeight(){
+        return height;
+    }
+    
+    void setColor(String c){
+        color = c;
+    }
+    
+    void setHeight(double h){
+        height = h;
+    }
+    
+    
+}
+
+
+NewTulip:
+--------
+
+public class NewTulip {
+    public Tulip mixTulip(Tulip t1, Tulip t2){
+        double avgHeight = (t1.getHeight() + t2.getHeight()) / 2.00;
+        
+        Tulip t3 = new Tulip();
+        t3.setHeight(avgHeight);
+        t3.setColor("Blue");
+        
+        return t3;
+    }
+}
+
+
+MethodOverloading:
+-----------------
+
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Overloading o1 = new Overloading();
+        o1.test();
+        o1.test(2);
+        o1.test(2,4);
+        o1.test(2.5);
+        o1.test(2,2.5,3);
+    }
+
+Overloading:
+-----------
+
+public class Overloading {
+    void test(){
+        System.out.println("No Parameters");
+    }
+    
+    void test(int a){
+        System.out.println(a);
+    }
+    
+    // This is not method overloading [not allowed]
+//    double test(int b){
+//        return b;
+//    }
+    
+    void test(int a, int b){
+        System.out.println(a+b);
+    }
+    
+    void test(int a,int b, double c){
+        System.out.println(a+b+c);
+    }
+    
+    void test(int a,double b, int c){
+        System.out.println(a+b+c);
+    }
+    
+    void test(double a){
+        System.out.println(a);
+    }
+}
