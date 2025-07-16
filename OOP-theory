@@ -996,6 +996,87 @@ Super keyword:
 
 
 
+                                                                            Lec-11
+                                                                            ------
+
+
+
+Conflict : if SUPER and SUB class both have same variable/methods
+---------
+	class A{
+			int i;
+			int j;
+	}
+
+	class B{
+			int i;
+
+			void show(){
+					sout(i); // prints : i variable of class 'B'
+					sout(super.i); // prints : i variable of class 'A'
+			}
+	}
+
+
+MULTIPLE INHERITANCE : (Not Allowed)
+--------------------------------------------
+
+		1 father  - 2 sons [right]
+		2 fathers - 1 son  [wrong] -------------------multiple inheritance---------------
+
+	Example:
+	-------	
+		class A{
+				...
+		}
+
+		class B{
+				...
+		}
+
+		class C extends A{
+				...
+		}
+
+		class C extends B{
+				...
+		}
+
+Multi level Inheritance: (Allowed)
+------------------------
+
+		class A{
+				...
+		}
+
+		class B extends A{
+				...		
+		}
+
+		class C extends B{
+				...
+		}
+
+
+Overriding:
+-----------
+		class A{
+				void show(){
+						...
+				}
+		}
+
+		class B{
+				void show(){
+						...
+				}
+
+				// does not change the show() of A class
+				// both methods of should have "same number of parameters"
+				// show() in class A  = show() in class B = "same number of parameter"
+		}
+
+
 
 
 
