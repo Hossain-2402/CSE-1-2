@@ -842,6 +842,157 @@ Type Convertion:
 
 
 
+                                                                            Lec-10
+                                                                            ------
+
+
+
+
+
+# Inheritance :
+--------------
+
+Example :
+	Animal 
+		- Cow
+		- Cat
+	# Cow and Cat both inherit the same properties of class Animal
+
+	Inheritance is used to write less code i.e. re-use the code [similar to function]
+
+
+
+	Animal (super class)
+		- Cow (sub class)
+		- Cat (sub class)
+
+
+
+	class A{
+		int i,j;
+
+		void showij(){
+				sout("i and j:" + i + " " + j);
+		}
+	}
+
+	class B extends A{
+
+			int k;
+
+			void showk(){
+					sout("k: "+ k);
+			}
+
+			void sum(){
+					sout("i+j+k: " + (i+j+k)); // B can access i & j
+			}
+
+	}
+
+
+
+# "Extends" keyword:
+------------------- 
+
+	class Demo{
+		
+		public static void main(String args[]){
+				A sup = new A();
+
+				B sub = new B();
+
+				sup.i =  10;
+				sup.j = 20;
+
+
+				sout(sup.showij()); // prints : 10,20
+
+				sub.i = 7;
+				sub.j = 8;
+				sub.k = 9;
+
+				sout(sub.sum()); // prints : 7+8+9
+
+				sout(sup.showij()); // prints : 10,20
+		}
+
+	}
+
+
+	Private keyword:
+	---------------
+
+	# if any variable of class A is "private",
+			class "B will not be able" to access A's variable / A's object
+
+
+
+
+
+
+
+Efficient code: (extending a variable in constructor)
+--------------
+
+
+	 class Box{
+			double height;
+			double width;
+			double depth;
+
+			Box(){
+					...
+			}
+
+			Box(double h, double w, double d){
+					...
+			}
+
+			double calculateVolume(){
+					double volume = height * width * depth;
+					return volume;
+			}
+	}
+
+
+	Let's say we want to and the variable "weight" in class Box
+
+		
+
+		class BoxWeight extends Box{
+
+				double weight;
+
+				BoxWeight(double wgt, double h, double w, double d){
+					....
+				}
+
+		}
+
+
+		class Demo{
+				Box a = new Box(1,2,3);
+
+				BoxWeight b = new BoxWeight(10,1,2,3);
+		}
+
+
+Super keyword:
+-------------
+
+
+		class BoxWeight extends Box{
+
+				double weight;
+
+				BoxWeight(double wgt, double h, double w, double d){
+					....
+				}
+
+				super(h,w,d); // calls the constructor of class "Box"
+
+		}
 
 
 
