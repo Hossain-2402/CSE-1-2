@@ -637,3 +637,89 @@ Students:
                                                                                                                          Lab-6
                                                                                                                         ------
 
+
+Main:
+----
+	
+	public class ONLINE_52 {
+	
+	    /**
+	     * @param args the command line arguments
+	     */
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	        
+	        Rectangle rect = new Rectangle(5,10, true, "Red"); // prints: Shape \n Rectangle
+	        
+	        rect.printArea();
+	        System.out.println(rect.toString());
+	    }
+	    
+	}
+	
+Shape: 
+-----
+	public class Shape {
+	    private boolean filled;
+	    private String color;
+	
+	//    public Shape() {
+	//        System.out.println("Shape");
+	//    }
+	
+	    public Shape(boolean filled, String color) {
+	        this.filled = filled;
+	        this.color = color;
+	    }
+	
+	    public boolean isFilled() {
+	        return filled;
+	    }
+	
+	    public String getColor() {
+	        return color;
+	    }
+	
+	    public void setFilled(boolean filled) {
+	        this.filled = filled;
+	    }
+	
+	    public void setColor(String color) {
+	        this.color = color;
+	    }
+	    
+	    public void printArea(){
+	        System.out.println("Area cannot be calculated");
+	    }
+	    public String toString(){
+	        String output = "a";
+	        return output;
+	    }
+	   
+	    
+	    
+	}
+
+Rectangle:
+----------
+	public class Rectangle extends Shape {
+	    private double height;
+	    private double width;
+	
+	    public Rectangle(double height, double width, boolean filled, String color) {
+	        //super(true, "Red"); // Has to be in the first line 
+	        super(filled, "Red");
+	        this.height = height;
+	        this.width = width;
+	        System.out.println("Rectangle");
+	    }
+	    
+	    @Override
+	      public void printArea(){
+	          System.out.println("Area: " + height * width);
+	    }
+	    
+	      
+	}
+
+	
