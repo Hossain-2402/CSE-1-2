@@ -839,9 +839,6 @@ Type Convertion:
 
 
 
-
-
-
                                                                             Lec-10
                                                                             ------
 
@@ -940,6 +937,7 @@ Efficient code: (extending a variable in constructor)
 			double height;
 			double width;
 			double depth;
+			double wgt;
 
 			Box(){
 					...
@@ -947,6 +945,11 @@ Efficient code: (extending a variable in constructor)
 
 			Box(double h, double w, double d){
 					...
+			}
+
+
+			Box(double wgt){
+					this.wgt = wgt;
 			}
 
 			double calculateVolume(){
@@ -962,10 +965,10 @@ Efficient code: (extending a variable in constructor)
 
 		class BoxWeight extends Box{
 
-				double weight;
+				double weight; // Now class "BoxWeight" has 4 instance variables (weight, height, width, depth)
 
 				BoxWeight(double wgt, double h, double w, double d){
-					....
+					super(wgt);
 				}
 
 		}
@@ -993,6 +996,8 @@ Super keyword:
 				super(h,w,d); // calls the constructor of class "Box"
 
 		}
+
+
 
 
 
@@ -1085,6 +1090,248 @@ Overriding:
 
 
 
+                                                                            Lec-12
+                                                                            ------
+
+
+
+
+Overriding: (Example)
+----------
+
+
+	class Vehicle{
+			void drive(){
+					...
+			}
+	}
+
+	class gasCar extends Vehicle{
+			void givingTurnSignal(){
+					...
+			}
+	}
+
+	class electricCar extends Vehicle{
+			void drive(){ //[ electric car does not drive like normal cars. Hence editing the drive method of super class ]
+					... 
+			}
+			// drive() method is being overrided 
+
+
+			void displayInfo(){
+					...
+			}
+	}
+
+
+Accessing object of sub class from object of super class :
+--------------------------------------------------------
+
+		Vehicle v;
+
+		gasCar c = new gasCar();
+
+		v = c; // ----------------------Allowed---------------------
+					 //	----------------------super class object can hold sub class object---------------------
+
+		v.drive() // This calls the drive() method of "gasCar" class
+		v.displayInfo(); // This willl not work. Because "Vehicle" class does not have the "displayInfo()" method 
+		v.givingTurnSignal(); // This willl not work. Because "Vehicle" class does not have the "givingTurnSignal()" method
+
+
+
+
+
+
+                                                                            Lec-13
+                                                                            ------
+Example of Last lecture code: (Dynamic method dispatcher)
+----------------------------
+	class Bank{
+			private String bank_name;
+			private double rate;
+
+			Bank(String bank_name, double rate){
+					this.bank_name = bank_name;
+					this.rate = rate;
+			}
+
+			String getBankName(){
+					return this.bank_name;
+			}
+			double getBankRate(){
+					return this.rate;
+			}
+
+
+			void whichBankMakesBiggestInteres(Bank b1, Bank b2){
+					if(b1.getBankRate() > b2.getBankRate()){
+							sout(b1.getBankName());					
+					}
+					else{
+							sout(b2.getBankName());
+					}
+			}
+	}
+
+
+	class OneBank extends Bank{
+			OneBank(String bank_name, double rate){
+					super(bank_name,rate);
+			}
+	}
+
+	class CityBank extends Bank{
+			CityBank(String bank_name, double rate){
+					super(bank_name,rate);
+			}
+	}
+
+
+	class Demo{
+			public static void main(String args[]){
+					OneBank a = new OneBank("One Bank",10.0);
+					CityBank b = new CityBank("City Bank",10.0);
+
+					Bank b1 = a;
+					Bank b2 = b;
+
+					Bank.whichBankMakesBiggestInteres(b1, b2);
+			}
+	}
+
+
+
+
+Example of Last lecture code: (with array)
+----------------------------
+
+
+	class Bank{
+			private String bank_name;
+			private double rate;
+
+			Bank(String bank_name, double rate){
+					this.bank_name = bank_name;
+					this.rate = rate;
+			}
+
+			String getBankName(){
+					return this.bank_name;
+			}
+			double getBankRate(){
+					return this.rate;
+			}
+
+
+			void whichBankMakesBiggestInteres(Bank []bank){
+					if(bank[0].getBankRate() > bank[1].getBankRate()){
+							sout(bank[0].getBankName());					
+					}
+					else{
+							sout(bank[1].getBankName());
+					}
+			}
+	}
+
+
+	class OneBank extends Bank{
+			OneBank(String bank_name, double rate){
+					super(bank_name,rate);
+			}
+	}
+
+	class CityBank extends Bank{
+			CityBank(String bank_name, double rate){
+					super(bank_name,rate);
+			}
+	}
+
+
+	class Demo{
+			public static void main(String args[]){
+					OneBank a = new OneBank("One Bank",10.0);
+					CityBank b = new CityBank("City Bank",10.0);
+
+					Bank bank[] = new Bank[2];
+					bank[0] = a;
+					bank[1] = b;
+
+					Bank.whichBankMakesBiggestInteres(bank);
+			}
+	}
+
+
+
+
+
+
+
+                                                                            Lec-14
+                                                                            ------
+
+# Abstract class can't make an "object"
+
+Abstract class:
+--------------
+
+abstract class Student{ 							//----------------------------------ABSTRACT keyword------------------------------
+			private String name;
+			private double totalCgpa;
+
+			Student(String name, double totalCgpa){
+					this.name = name;
+					this.totalCgpa = totalCgpa;
+			}
+
+			String getName(){
+					return this.name;
+			}
+			double getTotalCgpa(){
+					return this.totalCgpa;
+			}
+
+
+			abstract double calculateCGPA(); //----------------------------------ABSTRACT keyword------------------------------
+
+			static String compareStudents(Student s1, Student s2){
+					String name = "";
+
+					if(s1.calculateCGPA() > s2.calculateCGPA()){
+							name = s1.getName();				
+					}
+					else{
+						name = s2.getName();
+					}
+
+
+					return name;
+			}
+	}
+
+
+
+
+	class CseStudent extends Student{
+			CseStudent(String name, double totalCgpa){
+					super(name,totalCgpa);
+			}
+
+			double calculateCGPA(){      // method Overrided
+					return super.getTotalCgpa() / 141.5;
+			}
+	}
+
+	class ArchStudent extends Student{
+			CseStudent(String name, double totalCgpa){
+					super(name,totalCgpa);
+			}
+
+			double calculateCGPA(){      // method Overrided
+					return super.getTotalCgpa() / 152.5;
+			}
+	}
 
 
 
@@ -1094,60 +1341,85 @@ Overriding:
 
 
 
+	class Demo{
+			public static void main(String args[]){
+					CseStudent a = new CseStudent("Rahim",240.5);
+					CityBank b = new CityBank("Karim",255.5);
+
+					Student s1 = a;
+					Student s2 = b;
+
+					Student.compareStudents(s1,s2);
+
+
+			}
+	}
+
+
+                                                                            Lec-15
+                                                                            ------
+
+
+Abstract: (Another example) 
+--------
+
+		class Figure{
+
+				abstract double calArea();
+
+				Figure compare(Figure f1, Figure f2){
+						if(f1.calArea() > f2.calArea()){
+								return f1;
+						}
+						else{
+								return f2;
+						}
+				}
+
+		}
+
+		class Circle extends Figure{
+				double radius;
+				Circle(double radius){
+					this.radius = radius;
+				}
+
+				double calcArea(){
+						return Math.pi * Math.pow(this.radius,2);
+				}
+		}
+
+
+		class Rectangle extends Figure{
+				double length, width;
+				Rectangle(double length, width){
+					this.length = length;
+					this.width = width;
+				}
+
+				double calcArea(){
+						return this.length * this.width;
+				}
+		}
+
+
+		class Square extends Rectangle{
+				Square(double length){
+					this.length = length;
+					this.width = length;
+				}
+
+				double calcArea(){
+						return this.length * this.length;
+				}
+		}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                                                            Lec-16
+                                                                            ------
 
 
 
