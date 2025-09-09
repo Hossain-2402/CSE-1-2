@@ -418,3 +418,86 @@ int main(){
 
 
 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+c code:
+------
+	
+	#include<stdio.h>
+	
+	
+	int main(){
+	
+	    int n;
+	    scanf("%d",&n);
+	    int *p;
+	    p = (int*) malloc(sizeof(int) * n);
+	//    p = (int*) calloc(sizeof(int) , n);
+	
+	
+	    for(int i=0;i<n;i++){
+	        scanf("%d", (p+i));
+	    }
+	
+	    for(int i=0;i<n;i++){
+	        printf("%d, ", *(p+i));
+	    }
+	    printf("\n");
+	
+	
+	    realloc(p,sizeof(int)*(n+5));
+	
+	
+	    for(int i=0;i<n+5;i++){
+	        printf("%d, ", *(p+i));
+	    }
+	
+	
+	}
+
+cpp code:
+--------
+
+
+	#include<stdio.h>
+	
+	
+	int main(){
+	
+	    int n;
+	    scanf("%d",&n);
+	    int *p;
+	    p = (int*) malloc(sizeof(int) * n);
+	//    p = (int*) calloc(sizeof(int) , n);
+	
+	
+	    for(int i=0;i<n;i++){
+	        scanf("%d", (p+i));
+	    }
+	
+	    for(int i=0;i<n;i++){
+	        printf("%d, ", *(p+i));
+	    }
+	    printf("\n");
+	
+	
+	    realloc(p,sizeof(int)*(n+5));
+	
+	
+	    for(int i=0;i<n+5;i++){
+	        printf("%d, ", *(p+i));
+	    }
+	
+	
+	}
+
+
+
+
+
+
